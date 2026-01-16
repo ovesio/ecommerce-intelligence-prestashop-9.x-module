@@ -1,0 +1,22 @@
+{
+    "name": "ovesio/ovesio_ecommerce",
+    "description": "Ovesio - Ecommerce Intelligence",
+    "version": "1.0.0",
+    "license": "AFL-3.0",
+    "authors": [
+        {
+            "name": "Ovesio",
+            "email": "contact@ovesio.com"
+        }
+    ],
+    "type": "prestashop-module",
+    "autoload": {
+        "classmap": [
+            "classes/"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}

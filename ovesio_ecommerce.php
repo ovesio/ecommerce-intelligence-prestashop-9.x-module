@@ -5,14 +5,6 @@ if (!defined('_PS_VERSION_')) {
 
 class Ovesio_Ecommerce extends Module
 {
-    /** @var string */
-    public $confirmUninstall;
-    
-    /** @var array */
-    public $ps_versions_compliancy;
-    
-    /** @var bool */
-    public $bootstrap;
     public function __construct()
     {
         $this->name = 'ovesio_ecommerce';
@@ -20,18 +12,17 @@ class Ovesio_Ecommerce extends Module
         $this->version = '1.0.0';
         $this->author = 'Ovesio';
         $this->need_instance = 0;
-        $this->bootstrap = true;
-        
         $this->ps_versions_compliancy = [
-            'min' => '9.0.0',
+            'min' => '9.0',
             'max' => '9.99.99'
         ];
+        $this->bootstrap = true;
 
         parent::__construct();
 
         $this->displayName = $this->l('Ovesio - Ecommerce Intelligence');
         $this->description = $this->l('Empowers your store with advanced AI-driven insights, stock management forecasting, and strategic consulting.');
-        
+
         $this->confirmUninstall = $this->l('Are you sure you want to uninstall?');
     }
 
@@ -130,6 +121,7 @@ class Ovesio_Ecommerce extends Module
                         'type' => 'switch',
                         'label' => $this->l('Status'),
                         'name' => 'OVESIO_ECOMMERCE_STATUS',
+                        'is_bool' => true,
                         'values' => [
                             [
                                 'id' => 'active_on',
